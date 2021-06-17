@@ -6,7 +6,7 @@
  * @returns The score of the target population
  */
 const calcScore = (p) => {
-  let sum = [];
+  const sum = [];
   p.forEach((someone) => {
     let sumForSomeone = 0;
     someone.forEach((bit) => {
@@ -64,9 +64,6 @@ const selectPopulation = (population, scores, numberOfPopulation) => {
         break;
       }
     }
-  }
-  if (selectedPopulation.length === 99) {
-    selectedPopulation.push(population[5]);
   }
   return { selectedPopulation, selectedScores };
 };
@@ -135,11 +132,11 @@ const algorithm = ({
       scores,
       numberOfPopulation
     );
-    let children = [];
+    const children = [];
     // Create the next generation
     for (let counter = 0; counter < population.length; counter += 2) {
-      let parent1 = selectedPopulation[counter];
-      let parent2 = selectedPopulation[counter + 1];
+      const parent1 = selectedPopulation[counter];
+      const parent2 = selectedPopulation[counter + 1];
       const kids = crossover(parent1, parent2, crossOverMargin);
       kids.forEach((kid) => {
         mutation(kid, mutationRate);

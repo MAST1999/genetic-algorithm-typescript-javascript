@@ -1,4 +1,3 @@
-/* eslint-disable prefer-const */
 // this is for the info that the algorithm function will receive
 type GeneticAlgorithm = {
   population: Population;
@@ -19,7 +18,7 @@ type Population = number[][];
  * @returns The score of the target population
  */
 const calcScore = (p: Population): number[] => {
-  let sum: number[] = [];
+  const sum: number[] = [];
   p.forEach((someone) => {
     let sumForSomeone = 0;
     someone.forEach((bit) => {
@@ -167,11 +166,11 @@ const algorithm = ({
       numberOfPopulation
     );
 
-    let children: Population = [];
+    const children: Population = [];
     // Create the next generation
     for (let counter = 0; counter < population.length; counter += 2) {
-      let parent1 = selectedPopulation[counter];
-      let parent2 = selectedPopulation[counter + 1];
+      const parent1 = selectedPopulation[counter];
+      const parent2 = selectedPopulation[counter + 1];
 
       const kids = crossover(parent1, parent2, crossOverMargin);
 
