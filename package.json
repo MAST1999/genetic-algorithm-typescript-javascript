@@ -1,0 +1,16 @@
+{
+  "name": "genetic_algorithm",
+  "version": "1.0.0",
+  "description": "This is for the Uni project",
+  "main": "index.js",
+  "author": "Muhammad Amin Saffari Taheri",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.28.0",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.3.3"
+  }
+}
