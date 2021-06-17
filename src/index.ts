@@ -24,6 +24,7 @@ const calcScore = (p: Population): number[] => {
 };
 
 // this is the blueprint for the algorithm function
+
 let algorithm: (
   info: GeneticAlgorithm
 ) => { bestPerson: number[]; bestScore: number };
@@ -80,7 +81,7 @@ const selectPopulation = (
     let current = 0;
     for (let i = 0; i < numberOfPopulation; i++) {
       current += scores[i];
-      if (current > pick) {
+      if (current >= pick) {
         selectedPopulation.push(population[i]);
         selectedScores.push(scores[i]);
         current = 0;
@@ -94,6 +95,13 @@ const selectPopulation = (
   return { selectedPopulation, selectedScores };
 };
 
+/**
+ * This function handles the crossing over the parents and creating two children
+ * @param parent1 first parent
+ * @param parent2 second parent
+ * @param crossOverMargin the amount of cross over allowed
+ * @returns two children in an array
+ */
 const crossover = (
   parent1: number[],
   parent2: number[],
@@ -116,6 +124,11 @@ const crossover = (
   return [children1, children2];
 };
 
+/**
+ * This function handles mutation for the children
+ * @param child this is the child which is going to either mutate or not
+ * @param mutationRate this is the mutation rate
+ */
 const mutation = (child: number[], mutationRate: number): void => {
   child.forEach((bit, i) => {
     if (Math.random() < mutationRate) {
