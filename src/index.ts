@@ -88,9 +88,6 @@ const selectPopulation = (
       }
     }
   }
-  if (selectedPopulation.length === 99) {
-    selectedPopulation.push(population[5]);
-  }
   return { selectedPopulation, selectedScores };
 };
 
