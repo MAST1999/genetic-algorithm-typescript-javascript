@@ -177,3 +177,4 @@ console.log(
   " with the score of : ",
   bestScore
 );
+//# sourceMappingURL=index.js.map
